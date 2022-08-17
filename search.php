@@ -15,7 +15,7 @@
     // $cl->debug = TRUE;
     $results = [];
     if (!empty($_POST['search'])) {
-        foreach (explode("\n", $_POST['search'] ?? NULL) as $search) {
+        foreach (explode(',', $_POST['search'] ?? NULL) as $search) {
             $results = array_merge($cl->search($search),$results);
         }
     }
